@@ -6,67 +6,67 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Quando foi a primeira copa do mundo?",
+        enunciado: "Quando foi a primeira copa do mundo?.",
         alternativas: [
             {
-                texto: "13 de julho de 1930",
-                afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
+                texto: "13 de julho de 1930!",
+                afirmacao: "A primeira Copa do Mundo ocorreu no Uruguai. "
             },
             {
-                texto: "15 de maio de 1930",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
+                texto: "15 de maio de 1930!",
+                afirmacao: "A primeira Copa do Mundo ocorreu na França."
             }
         ]
     },
     {
-        enunciado: "Qual foi o primeiro time a vencer a copa do mundo?",
+        enunciado: "Quantas copas do mundo o brasil tem?",
         alternativas: [
             {
-                texto: "Uruguai",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "Brasil tem 5 copas.",
+                afirmacao: "O Brasil tem cinco títulos da Copa do Mundo da FIFA."
             },
             {
-                texto: "França",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "Brasil tem 6 copas.",
+                afirmacao: "O Brasil tem seis títulos da Copa do Mundo da FIFA"
             }
         ]
     },
     {
-        enunciado: "Quando foi a primeira copa do mundo vencida pelo brasil?",
+        enunciado: "Quando o Brasil ganhou a primeira copa do mundo?",
         alternativas: [
             {
                 texto: "1958",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                afirmacao: "O Brasil ganhou a sua primeira Copa do Mundo em 1958, na Suécia."
             },
             {
-                texto: "1962",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                texto: "1974.",
+                afirmacao: " O Brasil ganhou a sua primeira Copa do Mundo em 1974, na Suécia."
             }
         ]
     },
     {
-        enunciado: "Quantas copa do mundo o brasil tem?",
+        enunciado: "Qual foi os anos que o brasil foi campeão da copa do mundo?",
         alternativas: [
             {
-                texto: "5 Copas do mundo",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "O Brasil foi campeão da Copa do Mundo da FIFA nos anos de 1958, 1962, 1970, 1994 e 2002",
+                afirmacao: "O Brasil é a única seleção na história a conquistar cinco títulos mundiais."
             },
             {
-                texto: "6 Copas do mundo.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "O Brasil foi campeão da Copa do Mundo da FIFA nos anos de 1958, 1962, 1974, 1994, 2002, 2006.",
+                afirmacao: "O Brasil é a única seleção na história a conquistar seis títulos mundiais!"
             }
         ]
     },
     {
-        enunciado: "Qual foi os anos que o brasil foi campeão da copa do mundo? ",
+        enunciado: "Quem foi o artilheiro da última copa do mundo?",
         alternativas: [
             {
-                texto: "1958, 1962, 1970, 1994 e 2002.",
-                afirmacao: "Estes cinco títulos fazem do Brasil o único país a ter conquistado cinco vezes o torneio, sendo conhecido como o pentacampeão."
+                texto: " Kylian Mbappé.",
+                afirmacao: "A corrida pela Chuteira de Ouro, prêmio dado pela Fifa ao artilheiro da Copa do Mundo do Catar, com Kylian Mbappé no topo."
             },
             {
-                texto: "1958, 1962, 1974, 1982 e 2002",
-                afirmacao: "Brail foi reconhecido por ser a seleção com mais copas, sendo pentacampẽao. "
+                texto: "Cristiano Ronaldo.",
+                afirmacao: "A corrida pela Chuteira de Ouro, prêmio dado pela Fifa ao artilheiro da Copa do Mundo do Catar, com Cristiano Ronaldo no topo. "
             }
         ]
     },
@@ -75,15 +75,14 @@ const perguntas = [
 
 let atual = 0;
 let perguntaAtual;
-let historiaFinal  = "";
+let historiaFinal = " ";
 
 function mostraPergunta(){
-    if(atual>= perguntas.length){
-mostraResultado();
-return;
-
-
+    if (atual >= perguntas.length){
+        mostraResultado();
+        return;
     }
+
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
@@ -101,19 +100,17 @@ function mostraAlternativas(){
 }
 function respostaSelecionada(opcaoSelecionada){
     const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal = afirmacoes +" ";
+    historiaFinal += afirmacoes +"" ;
     atual++;
     mostraPergunta();
 
 }
-
 function mostraResultado(){
-caixaPerguntas.textContent = "Em 2049";
-textoResultado. textContent = historiaFinal;
-caixaAlternativas. textContent = "";
+    caixaPerguntas.textContent = "Em 2002...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 
 }
-
 
 mostraPergunta();
 
